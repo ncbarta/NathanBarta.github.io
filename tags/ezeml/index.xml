@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>EZEML on Nathan Barta</title>
+        <link>https://nathanbarta.com/tags/ezeml/</link>
+        <description>Recent content in EZEML on Nathan Barta</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 20 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://nathanbarta.com/tags/ezeml/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>EZPT Exercise Markup Language (EZEML)</title>
+        <link>https://nathanbarta.com/posts/ezeml/</link>
+        <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/ezeml/</guid>
+        <description>This document is from my work at ezpt.xyz, where I worked as an iOS developer on their physical therapy application. My hope is that this language becomes an industry standard, or at least a stepping-stone for the future of exercise notation.
+Why are we creating EZEML? Workouts (aka Routines) on our app are constantly changing. Every time we modify what a workout looks like, we have to change our entire database schema.</description>
+        </item>
+        
+    </channel>
+</rss>

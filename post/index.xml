@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Nathan Barta</title>
+        <link>https://nathanbarta.com/post/</link>
+        <description>Recent content in Posts on Nathan Barta</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 21 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://nathanbarta.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>HackNC 2022</title>
+        <link>https://nathanbarta.com/posts/hacknc2022/</link>
+        <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/hacknc2022/</guid>
+        <description>HACKNC2022 A few weeks ago I had the chance to participate in HackNC 2022. I chose the financial track.
+What I built Tempest is a manager for trading algorithms. Basically, it is an abstraction between the systems for placing orders on the exchange, and your trading algorithms. I made this because when I used to run trading bots, it was very annoying to manage them. With Tempest you can write trading algorithms in whatever language you want &amp;amp; not worry about how their signals get turned into trades.</description>
+        </item>
+        <item>
+        <title>EZPT Exercise Markup Language (EZEML)</title>
+        <link>https://nathanbarta.com/posts/ezeml/</link>
+        <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/ezeml/</guid>
+        <description>This document is from my work at ezpt.xyz, where I worked as an iOS developer on their physical therapy application. My hope is that this language becomes an industry standard, or at least a stepping-stone for the future of exercise notation.
+Why are we creating EZEML? Workouts (aka Routines) on our app are constantly changing. Every time we modify what a workout looks like, we have to change our entire database schema.</description>
+        </item>
+        <item>
+        <title>Maxing out MapKit: Optimizing map views for high perfomance</title>
+        <link>https://nathanbarta.com/posts/maxing-out-mapkit/</link>
+        <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/maxing-out-mapkit/</guid>
+        <description>All changes require minimal code changes and boost perfomance substantially. This is not a tutorial on how to use a map view.
+Dequeue If you are looking at this blog, there is a high chance you already know the following optimization.
+Map Views are set up very similary to Table Views from an interface perspective. Developers should make sure they dequeue MKMapAnnotations.
+1 2 3 4 5 6 7 8 func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -&amp;gt; MKAnnotationView?</description>
+        </item>
+        <item>
+        <title>My Favorite Swift/iOS/MacOS Resources</title>
+        <link>https://nathanbarta.com/posts/my-favorites/</link>
+        <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/my-favorites/</guid>
+        <description>RESOURCES Originally written for the #swift-dev branch of PittCSC
+iOS/MacOS Application Development &amp;amp; Swift Name Topics Post Frequency Reading-level Swift by Sundell Articles, Tutorials, Swift Frequent Beginner-Advanced UseYourLoaf Debugging, testing, assorted Weekly Intermediate-Advanced HackingWithSwift Tutorials, career Occasional Beginner TheSwiftDev Tutorials, Vapor, SPM, design patterns, assorted Every other week Intermediate - Advanced SwiftRocks Deployment, security, internals Monthly… sometimes Advanced RDerik Security, environment Monthly… sometimes Advanced Donny Wals Data, JSON, Combine Every other week Intermediate - Advanced Dave DeLong HTTP with Swift, compiler Monthly… sometimes Beginner - Advanced TheAtomicBirdhouse Assorted, CloudKit Monthly… sometimes Intermediate - Advanced iOSGoodies Newsletter, shoutouts Weekly Beginner - Advanced AndyIbanez Assorted Weekly Beginner - Advanced DanielSaidi SPM Monthly… sometimes Beginner - Advanced RayWenderlich Tutorials Weekly Beginner - Advanced Swiftjectivec Tutorials Frequent Beginner-Advanced Erica Sadun Assorted Occasional Intermediate-Advanced Igor Kulman Tutorials Monthly Intermediate-Advanced SarunW Tutorials Almost daily Beginner-Advanced Belkadan Software Articles, Low-Level, Swift Monthly Beginner-Advanced iOS/MacOS Security Name Topics Post Frequency Reading-level Objective-See Malware, Privacy, Security Frequent Intermediate-Advanced Sneak Privacy, Philosophy Occasional Beginner-Advanced Security Affairs - Mobile News Very Frequent Beginner-Advanced TheEvilBit Malware, Vulnerabilities Monthly Intermediate-Advanced The Desolation of Blog Guides, Opinions/Commentary, Privacy Frequent Beginner-Advanced Wojciech Reguła Securty, #macOSRedTeamingTricks, Vulnerabilities Frequent Beginner-Advanced Der Flounder Securty Seldom updated Intermediate-Advanced Open source directory: https://iosdevdirectory.</description>
+        </item>
+        <item>
+        <title>DAY #72</title>
+        <link>https://nathanbarta.com/posts/day72/</link>
+        <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day72/</guid>
+        <description>Xcode SVG Support History Xcode 12 introduced svg support - meaning you can put svg assets in the /assets folder.
+Originally published 09/15/2022 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #73</title>
+        <link>https://nathanbarta.com/posts/day73/</link>
+        <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day73/</guid>
+        <description>What are Swift Metatypes (Part 1) A metatype is a type of a type. OK post done…..jk
+Metatypes are used to access properties and methods (including initializers) belonging to a type - in contrast to an instance. Every time you use a static property or function, you are using a Metatype.
+1 2 let whatsGoingOnHere: Int.Type = Int.self // Int.Type is a type, and Int.self is an instance let a = SomeClass() // what’s actually happening is SomeClass.</description>
+        </item>
+        <item>
+        <title>DAY #71</title>
+        <link>https://nathanbarta.com/posts/day71/</link>
+        <pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day71/</guid>
+        <description>64bit Starting with iOS 11, and the iPhone 5s (2013), iOS devices have been 64bit instead of 32bit. Apple watches were updated to 64bit in 2016, model: s2. You can still build to 32bit architecture - however it’s basically useless since almost no devices at this point run on it.
+Originally published 09/13/2022 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #70</title>
+        <link>https://nathanbarta.com/posts/day70/</link>
+        <pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day70/</guid>
+        <description>App Size The maximum size of an app is 4gb - uncompressed. For iOS 9+ the max executable size is 500mb, which is 8.33x larger than what was allowed for iOS 7-8. Apple Watch has a restriction of 75mb.
+Originally published 09/12/2022 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #69</title>
+        <link>https://nathanbarta.com/posts/day69/</link>
+        <pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day69/</guid>
+        <description>Xcode magnification/zoom Facts Changing the magnification of a file also changes the magnification of the debug console.
+You can still not change the zoom of a Main.storyboard file in Xcode when you are working on MacOS applications - even though you have been able to do it with iOS applications forever. 🤷‍♂️
+Originally published 09/09/2022 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #68</title>
+        <link>https://nathanbarta.com/posts/day68/</link>
+        <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day68/</guid>
+        <description>Swift used to have prefix and postfix inc/dec operators, but they were removed in Swift v3.
+Originally published 09/08/2022 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #67</title>
+        <link>https://nathanbarta.com/posts/day67/</link>
+        <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day67/</guid>
+        <description>You do not need to include the &amp;ldquo;return&amp;rdquo; keyword inside a function with one expression.
+1 2 3 func myFunction() -&amp;gt; String { &amp;#34;Boo&amp;#34; } Originally published 10/22/2021 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #66</title>
+        <link>https://nathanbarta.com/posts/day66/</link>
+        <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day66/</guid>
+        <description>You can profile swift&amp;rsquo;s compilation performance in an Xcode project with:
+1 xcodebuild -workspace App.xcworkspace -scheme App clean build OTHER_SWIFT_FLAGS=&amp;#34;-Xfrontend -debug-time-function-bodies&amp;#34; | grep .[0-9]ms | grep -v ^0.[0-9]ms | sort -nr &amp;gt; culprits.txt replacing &amp;ldquo;App&amp;rdquo; with your project&amp;rsquo;s name.
+This trick comes from: https://irace.me/swift-profiling
+Originally published 10/21/2021 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #65</title>
+        <link>https://nathanbarta.com/posts/day65/</link>
+        <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day65/</guid>
+        <description>Autolayout (constraints etc) was introduced in iOS 6.
+Originally published 10/20/2021 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #62</title>
+        <link>https://nathanbarta.com/posts/day62/</link>
+        <pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day62/</guid>
+        <description>You can use &amp;ldquo;#&amp;rdquo; to escape/pad strings in swift.
+1 2 3 4 5 6 let name = &amp;#34;Nathan&amp;#34; print(#&amp;#34;Hello \#(name)&amp;#34;#) // prints: Hello Nathan print(#&amp;#34;Insert &amp;#34;Some Stuff&amp;#34; here&amp;#34;#) // prints: Insert &amp;#34;Some Stuff&amp;#34; here It can be helpful for writing more readable code, since using &amp;ldquo;&amp;quot; to escape can be tedious.
+Fun fact: This feature was developed by a student at Georgia Tech!
+Originally published 10/19/2021 @ https://pittcsc.org/ Discord</description>
+        </item>
+        <item>
+        <title>DAY #63</title>
+        <link>https://nathanbarta.com/posts/day63/</link>
+        <pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day63/</guid>
+        <description>You can make multiline strings with triple quotation marks.
+1 2 3 4 5 let textBlock = &amp;#34;&amp;#34;&amp;#34; This is some text. It is multiline. Fun, right? &amp;#34;&amp;#34;&amp;#34; Originally published 10/19/2021 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #64</title>
+        <link>https://nathanbarta.com/posts/day64/</link>
+        <pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day64/</guid>
+        <description>There are lots of properties you can access on the character-level to classify the category of the character.
+Ex: isSymbol, isNumber, isLetter, isPunctuation, isUppercased, isLowercased, isCased, isCurrencySymbol, isMathSymbol, isHexDigit, isWholeNumber, isWhitespace, isNewline, isASCII.
+Originally published 10/19/2021 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #61</title>
+        <link>https://nathanbarta.com/posts/day61/</link>
+        <pubDate>Sat, 16 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day61/</guid>
+        <description>Swift does not have garbage collection. Instead it uses ARC, which means once an object stops being referenced, it gets deallocated. Swift developers should be careful to not accidentally create a retain cycle.
+Yes, ARC is considered to be garbage collection by some people, however I’m not really knowledgeable to make an opinion on what it should be classified as - for right now just remember Swift uses ARC
+Originally published 10/16/2021 @ https://pittcsc.</description>
+        </item>
+        <item>
+        <title>DAY #60</title>
+        <link>https://nathanbarta.com/posts/day60/</link>
+        <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day60/</guid>
+        <description>This is the implementation behind optionals in swift:
+1 2 3 4 enum Optional&amp;lt;T&amp;gt; { case some(T) case none } It is an algebraic data type. Swift has syntax to help make optionals more usable (if let, guard let, etc.)
+Originally published 10/15/2021 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #59</title>
+        <link>https://nathanbarta.com/posts/day59/</link>
+        <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day59/</guid>
+        <description>Swift has algebraic data types. Structs are multiplicative, and enums are additive. Most modern programming languages incorporate this feature in some form.
+Originally published 10/14/2021 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #58</title>
+        <link>https://nathanbarta.com/posts/day58/</link>
+        <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day58/</guid>
+        <description>Xcode 6.0 was the first version to allow Swift integration into the SDK. It was 2014 at the time and iPhones were running iOS 8.0
+Originally published 10/13/2021 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #57</title>
+        <link>https://nathanbarta.com/posts/day57/</link>
+        <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day57/</guid>
+        <description>iCloud had a predecessor called MobileMe, which was a collection of software and tools packaged in a $100/y subscription sold by Apple.
+Originally published 10/12/2021 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #56</title>
+        <link>https://nathanbarta.com/posts/day56/</link>
+        <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day56/</guid>
+        <description>Xcode 13 comes with VIM bindings!
+Here&amp;rsquo;s an article which explores the feature:
+https://ericasadun.com/2021/06/08/xcode-vimpocalypse-now/
+Originally published 10/11/2021 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #55</title>
+        <link>https://nathanbarta.com/posts/day55/</link>
+        <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day55/</guid>
+        <description>iOS 14 has 351 binaries built with some Swift, which accounts for about 8% of binaries on the device. Objc is in 88% of binaries, cpp is in 17%, and C is in 8%.
+Originally published 10/10/2021 @ https://pittcsc.org/ Discord
+Published here on 09/20/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #54</title>
+        <link>https://nathanbarta.com/posts/day54/</link>
+        <pubDate>Sat, 09 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day54/</guid>
+        <description>iPhones were not originally intended to run 3rd party apps. Steve Jobs envisioned developers using the on-device safari app as an engine for web apps. iOS 2.0 (called iPhone OS back then) brought the app store which allowed native running applications. Now iOS 11.3+ supports progressive web apps, which is basically a hybrid between a native app and a web app (very containerized).
+Originally published 10/09/2021 @ https://pittcsc.org/ Discord
+Published here on 09/16/2022.</description>
+        </item>
+        <item>
+        <title>DAY #53</title>
+        <link>https://nathanbarta.com/posts/day53/</link>
+        <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day53/</guid>
+        <description>.count() vs .isEmpty() .count (computed property) is O(n) for non-random access collections, while .isEmpty() is O(1). Keep this in mind for performance.
+Example You have a one section table view which is either going to be empty or very full. We&amp;rsquo;ve implemented a short circuit.
+1 2 3 4 let cells = [] func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&amp;gt; Int { return cells.isEmpty() || cells.count } Originally published 10/08/2021 @ https://pittcsc.</description>
+        </item>
+        <item>
+        <title>DAY #52</title>
+        <link>https://nathanbarta.com/posts/day52/</link>
+        <pubDate>Thu, 07 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day52/</guid>
+        <description>Kotlin has interop with objc (and therefore some interop with Swift too.) It might be possible to recycle code between an android and iOS application. Although, you should remember that objc code is generally slower than Swift. So maybe recycle authentication code, but not some API client that gets used often.
+Originally published 10/07/2021 @ https://pittcsc.org/ Discord
+Published here on 09/16/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #51</title>
+        <link>https://nathanbarta.com/posts/day51/</link>
+        <pubDate>Wed, 06 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day51/</guid>
+        <description>Bridging between data structures (set, array, dict) in swift and objc is usually O(1) time space complexity. If elements in these data structures are not classes or objc protocols or bridgeable to a foundation type they will be lazily converted on call, which is O(n). So&amp;hellip;. do your research - some stuff is toll free, but some stuff is not.
+Originally published 10/06/2021 @ https://pittcsc.org/ Discord
+Published here on 09/16/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #50 🎊</title>
+        <link>https://nathanbarta.com/posts/day50/</link>
+        <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day50/</guid>
+        <description>Switch statements can operate on collections who&amp;rsquo;s types are not known or inconsistent.
+Originally published 10/05/2021 @ https://pittcsc.org/ Discord
+Published here on 09/16/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #49</title>
+        <link>https://nathanbarta.com/posts/day49/</link>
+        <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day49/</guid>
+        <description>Chris Lattner, the creator of Swift, is also responsible for LLVM and the Clang project.
+Originally published 10/04/2021 @ https://pittcsc.org/ Discord
+Published here on 09/16/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #48</title>
+        <link>https://nathanbarta.com/posts/day48/</link>
+        <pubDate>Sun, 03 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day48/</guid>
+        <description>Swift is old enough to have influenced other languages. Rust&amp;rsquo;s optional bindings (the &amp;ldquo;if let&amp;rdquo; pattern in Swift) are credited to Swift.
+https://doc.rust-lang.org/reference/influences.html
+Originally published 10/03/2021 @ https://pittcsc.org/ Discord
+Published here on 09/16/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #47</title>
+        <link>https://nathanbarta.com/posts/day47/</link>
+        <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day47/</guid>
+        <description>You can code apps without Xcode. Everyone knows Xcode can be a hastle some times, but it really is the best way to program iOS/macOS applications. You can build iOS apps just how you&amp;rsquo;d build other software, but it gets annoying pretty fast. At some point, you will rely on the Xcode SDK/toolchain to sign your application for distribution.
+https://betterprogramming.pub/writing-ios-apps-without-xcode-89450d0de21a https://stackoverflow.com/questions/61464644/i-have-xcode-command-line-tools-do-i-really-need-the-xcode-gui-to-develop-ios-a
+Originally published 10/02/2021 @ https://pittcsc.org/ Discord
+Published here on 09/16/2022.</description>
+        </item>
+        <item>
+        <title>DAY #46</title>
+        <link>https://nathanbarta.com/posts/day46/</link>
+        <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day46/</guid>
+        <description>Little bit of a history lesson. As you probably know, Swift was made by Apple. However, it is now open source. It was made open source in December 3 2015, only a year after launch. People tend to criticize Swift for being an &amp;ldquo;Apple Language&amp;rdquo; yet it has been independent for years.
+You can track the progress of the language on https://swift.org/ and https://github.com/apple/swift
+Originally published 10/01/2021 @ https://pittcsc.org/ Discord</description>
+        </item>
+        <item>
+        <title>DAY #45</title>
+        <link>https://nathanbarta.com/posts/day45/</link>
+        <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day45/</guid>
+        <description>Shareplay You can use the &amp;ldquo;where&amp;rdquo; clause to specify generics. This is another part of what has been described in day 10 and 26.
+1 func aFunction&amp;lt;T where T: isOfSomeClass&amp;gt;(parameter: T) {} Originally published 09/30/2021 @ https://pittcsc.org/ Discord
+Published here on 09/16/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #44</title>
+        <link>https://nathanbarta.com/posts/day44/</link>
+        <pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day44/</guid>
+        <description>Shareplay Apple released a new API with iOS 15 called SharePlay. It&amp;rsquo;s basically a tool to sync media between people on a FaceTime call. For instance, you can watch a movie as a group - all while being physically distant. You may have heard that android users can now FaceTime too (with Facetime links), it&amp;rsquo;s all part of a FaceTime revamp.
+Originally published 09/29/2021 @ https://pittcsc.org/ Discord
+Published here on 09/16/2022.</description>
+        </item>
+        <item>
+        <title>DAY #43</title>
+        <link>https://nathanbarta.com/posts/day43/</link>
+        <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day43/</guid>
+        <description>Rethows is a keyword to indicate that a function is wrapping around a throwing function.
+1 2 3 4 func iThrow() throws -&amp;gt; Bool {} func iDontThrow() -&amp;gt; Bool {} func iWrap(t: (Void) -&amp;gt; throws Bool) rethrows {} iWrap can wrap either of the functions. During compilation, Swift can tell if the wrapped function throws or not - which means it will not ask you to implement try/catch for a iDontThrow() parameter.</description>
+        </item>
+        <item>
+        <title>DAY #42</title>
+        <link>https://nathanbarta.com/posts/day42/</link>
+        <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day42/</guid>
+        <description>In celebration of the creation of rust-dev branch, we&amp;rsquo;ll be having a themed post today.
+Various people have worked on creating objc/swift bindings to rust. Is this knowledge really useful? Probably not. Have fun.
+https://belkadan.com/blog/2020/08/Objective-Rust/ https://crates.io/crates/objc https://sasheldon.com/blog/2014/11/28/interoperating-between-objective-c-and-rust/ https://github.com/nvzqz/swift-bindgen
+Originally published 09/27/2021 @ https://pittcsc.org/ Discord
+Published here on 09/16/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #41</title>
+        <link>https://nathanbarta.com/posts/day41/</link>
+        <pubDate>Sun, 26 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day41/</guid>
+        <description>Enum logic. You can clean up a lot of code by hiding logic in an enum.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 enum Genre { case fiction case scifi case nonFiction case history case science case medical case other(name: String) //Associated value var isSciencey: Bool { switch self { case .scifi, .science, .medical: return true default: return false } } } //The code above lets us do this: let isSciencey = someGenre.</description>
+        </item>
+        <item>
+        <title>DAY #40 🎉 🎉🎉</title>
+        <link>https://nathanbarta.com/posts/day40/</link>
+        <pubDate>Sat, 25 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day40/</guid>
+        <description>Yesterday&amp;rsquo;s feature gets a little bit more advanced.
+You can actually do matching with it!
+1 2 3 4 5 6 7 enum MyEnum { case multiple(_ firstValue: String, _ secondValue: Int) } if case let MyEnum.multiple(_, theSecondValue) = .multiple(&amp;#34;anything&amp;#34;, 10) { // True no matter what `firstValue` is print(theSecondValue) } Code credit: Dustin @ Strega&amp;rsquo;s Gate
+Originally published 09/25/2021 @ https://pittcsc.org/ Discord
+Published here on 09/09/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #39</title>
+        <link>https://nathanbarta.com/posts/day39/</link>
+        <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day39/</guid>
+        <description>Pulling values out of an enum with associated value fields. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 // Lets take an old example enum Genre { case fiction case scifi case nonFiction case history case science case medical case other(name: String) //Associated value } // The defacto method for pulling out associated values invloves a switch statement switch genre { case .</description>
+        </item>
+        <item>
+        <title>DAY #38</title>
+        <link>https://nathanbarta.com/posts/day38/</link>
+        <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day38/</guid>
+        <description>Lazy properties 1 2 3 4 5 //Marking vars with the &amp;#34;lazy&amp;#34; keyword will make it so they are only initialized if called, and only initialized once. lazy var dateFormatter = DateFormatter() //One cool feature of Swift a lot of people don&amp;#39;t realize is that constants work the same way!! The following object will only be initialized if/when it gets called. It&amp;#39;s even thread-safe. Warning: it will stay in memory unless you manually manage it or it gets dereferenced.</description>
+        </item>
+        <item>
+        <title>DAY #37</title>
+        <link>https://nathanbarta.com/posts/day37/</link>
+        <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day37/</guid>
+        <description>Some cool Swift changes 1 2 3 4 5 6 7 8 9 10 11 // Old Swift loop for var i = 0; i &amp;lt; 100; i++ {} // Swift 3?+ loop for i in 0..&amp;lt;100 {} // Old range operator (this was from the beta of swift) let someRange = 1..10 // New range operator let someRange = 1..&amp;lt;10 Originally published 09/22/2021 @ https://pittcsc.org/ Discord
+Published here on 09/09/2022.</description>
+        </item>
+        <item>
+        <title>DAY #36</title>
+        <link>https://nathanbarta.com/posts/day36/</link>
+        <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day36/</guid>
+        <description>You can make your data structures iteratable. Here&amp;rsquo;s an example from https://holyswift.app/linked-lists-with-sequence-and-iteratorprotocol-in-swift . This is just one example of how swift&amp;rsquo;s expressiveness can help you make functional code.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 class LinkedList: Sequence { var root: LinkedListNode? func makeIterator() -&amp;gt; LinkedListIterator { return LinkedListIterator(start: root) } } class LinkedListIterator: IteratorProtocol { // Mark 1 var current: LinkedListNode?</description>
+        </item>
+        <item>
+        <title>DAY #35</title>
+        <link>https://nathanbarta.com/posts/day35/</link>
+        <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day35/</guid>
+        <description>Swift Bitwise operators Bitwise operators in Swift exist, and are just like bitwise operators in C, except that they will error on overflow. However, you can disable overflow errors with these special operators:
+Overflow addition (&amp;amp;+) Overflow subtraction (&amp;amp;-) Overflow multiplication (&amp;amp;*)
+You can also define your own operators such as a logical shift &amp;ldquo;&amp;raquo;&amp;gt;&amp;rdquo;.
+Originally published 09/20/2021 @ https://pittcsc.org/ Discord
+Published here on 09/09/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #34</title>
+        <link>https://nathanbarta.com/posts/day34/</link>
+        <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day34/</guid>
+        <description>Codable (Part 4 of 4) Working with codable dates There are many ways to represent a date in CS. With codable, you can code and convert date representations to match the Date() type in swift.
+1 2 3 4 5 6 7 8 9 10 11 12 //Decoding example. Convert an ISO8601 to Date() let decoder = JSONDecoder() decoder.dateDecodingStrategy = .iso8601 //Custom: You can also decode from a custom date format using DateFormatter().</description>
+        </item>
+        <item>
+        <title>DAY #33</title>
+        <link>https://nathanbarta.com/posts/day33/</link>
+        <pubDate>Sat, 18 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day33/</guid>
+        <description>Codable (Part 3 of 4) It is possible to make a custom keyDecodingStrategy. However, I think it is not worth the effort since working with strings in Swift is the most annoying thing ever. You might as well hardcode everything like in day #31 at that point - it&amp;rsquo;ll make your app faster.
+See here for example implementation: https://martiancraft.com/blog/2018/08/Implementing-custom-key-strategy-for-coding-types/
+Originally published 09/18/2021 @ https://pittcsc.org/ Discord
+Published here on 09/09/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #32</title>
+        <link>https://nathanbarta.com/posts/day32/</link>
+        <pubDate>Fri, 17 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day32/</guid>
+        <description>Codable (Part 2 of 4) If you just have a 1:1 conversion like snake_case-&amp;gt;camelCase, you do not need to do what was described in day #31, instead you can use built in decoding strategies.
+1 2 let decoder = JSONDecoder() decoder.keyDecodingStrategy = .convertFromSnakeCase There are options for DefaultKeys, SnakeCase, and Custom. This technique comes with a performance cost, but is great for prototyping.
+Originally published 09/17/2021 @ https://pittcsc.org/ Discord
+Published here on 09/09/2022.</description>
+        </item>
+        <item>
+        <title>DAY #31</title>
+        <link>https://nathanbarta.com/posts/day31/</link>
+        <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day31/</guid>
+        <description>Codable (Part 1 of 4) Data coming from (or going to) an API is not always organized/standardized. For instance, the json keys could have different naming schemes. Consider the case below:
+1 2 3 4 5 { first_name: &amp;#34;&amp;#34; MiddleName: &amp;#34;&amp;#34;, lastName: &amp;#34;&amp;#34;, } So how does this get coded? By using a feature called codingkeys. Simply create an enum inside the object you are decoding to as following:
+1 2 3 4 5 6 7 8 9 10 struct Name: Codable { let firstName: String let middleName: String let lastName: String enum CodingKeys: String, CodingKey { case firstName = &amp;#34;first_name&amp;#34; case middleName = &amp;#34;MiddleName&amp;#34; case lastName = &amp;#34;lastName&amp;#34; } } This codingkeys enum will allow the codable object to map to the json keys.</description>
+        </item>
+        <item>
+        <title>DAY #30 🎉🎉🎉</title>
+        <link>https://nathanbarta.com/posts/day30/</link>
+        <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day30/</guid>
+        <description>How do you measure the speed of Swift code? Well, first things first, compile it. Putting your code in a playground/REPL is not going to give you accurate results. The best way to test your code is with testing frameworks. You can test sections of pure swift easily with attabench https://swiftrocks.com/benchmarking-swift-code-properly-with-attabench . Xcode of course comes with it&amp;rsquo;s own profiling tools (called instruments) for testing things such as launchtime, time, leaks, memory usage, battery usage, network/file usage, and much more - which is applicable to full scale application testing.</description>
+        </item>
+        <item>
+        <title>DAY #29</title>
+        <link>https://nathanbarta.com/posts/day29/</link>
+        <pubDate>Tue, 14 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day29/</guid>
+        <description>Normalized Swift benchmarks from lots of computational tests: Swift consumes 2.79x energy than C Swift takes 4.2x longer than C Swift uses 2.71x more memory than C
+Overall, these are some great numbers for a language with so many features.
+Originally published 09/14/2021 @ https://pittcsc.org/ Discord
+Published here on 09/09/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #28</title>
+        <link>https://nathanbarta.com/posts/day28/</link>
+        <pubDate>Mon, 13 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day28/</guid>
+        <description>How to test your app&amp;rsquo;s ability to work with your API locally If your API is HTTP only, there is nothing you have to do. However, if you are using a self-signed certificate for HTTPS (testing purposes of course), there are extra things to do. iOS apps will not trust self-signed certs.
+Method 1: Force Trust (not recommended) Add key &amp;ldquo;Allow Arbitrary Loads : YES&amp;rdquo; to &amp;ldquo;App Transport Security Settings&amp;rdquo; in info.</description>
+        </item>
+        <item>
+        <title>DAY #27</title>
+        <link>https://nathanbarta.com/posts/day27/</link>
+        <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day27/</guid>
+        <description>Xcode documentation is really fun! You can tag functions with comments, which are then presented nicely when you OPT+Click the function in context. Here is an example on a data structure. There are tons of tags you can use, see more at https://nshipster.com/swift-documentation/
+Other tips: Pressing CMD+OPT+&amp;quot;/&amp;quot; will auto generate a skeleton.
+― Josh Jaslow Originally published 09/12/2021 @ https://pittcsc.org/ Discord
+Published here on 09/09/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #26</title>
+        <link>https://nathanbarta.com/posts/day26/</link>
+        <pubDate>Sat, 11 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day26/</guid>
+        <description>Swift has &amp;ldquo;where&amp;rdquo; clauses that allow you to put logic in loop statements and extensions
+1 2 3 4 5 6 7 let list = Array(0...100) for x in list where x &amp;lt; 50 { print(x) } // For an example with extensions, see day #10! Originally published 09/11/2021 @ https://pittcsc.org/ Discord
+Published here on 09/09/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #25</title>
+        <link>https://nathanbarta.com/posts/day25/</link>
+        <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day25/</guid>
+        <description>It is possible to make a linked list in 4 lines of code in Swift (but just because you can do something doesn&amp;rsquo;t mean you should)
+1 2 3 4 indirect enum LinkedListNode&amp;lt;T&amp;gt; { case value(value: T) case next(value: T, next: LinkedListNode) } 1 2 3 4 switch currentNode { case .value(let value): print(value) case .next(let value, let next): print(value); currentNode = next } The &amp;ldquo;indirect&amp;rdquo; keywords signals the enum to be put into the heap instead of the stack (enums are usually inline).</description>
+        </item>
+        <item>
+        <title>DAY #24</title>
+        <link>https://nathanbarta.com/posts/day24/</link>
+        <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day24/</guid>
+        <description>What is DerivedData? Derived data is stored at /Users/YourNameHere/Library/Developer/Xcode/DerivedData
+At a basic level, it will cache build information for your projects, but let&amp;rsquo;s see what it actually stores.
+Precompiled module files. These files are an abstraction to reading in headers every time you import something in code. These files will be under a folder with a hash as a name. The hash takes in clang arguments as input. Index folder: You may have seen an indicator saying Indexing in progress.</description>
+        </item>
+        <item>
+        <title>Creating (and maintaining) an LLC for your business venture</title>
+        <link>https://nathanbarta.com/posts/llc-guide/</link>
+        <pubDate>Wed, 08 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/llc-guide/</guid>
+        <description>I am not a lawyer and this is not legal advice
+Introduction The purpose of this guide is to inform you in LLC creation so scummy registered agent services do not scam you into overpriced services.
+Step 1: Research your business needs If you have a business with a physical presence in a certain state (ex: dog walking, warehouse/distributer, restaurant), you will likely need to incorporate in that state. However, if your business is completely online/digital with no &amp;ldquo;nexus&amp;rdquo; (see &amp;ldquo;nexus&amp;rdquo; laws), you may be able to incorporate in any state.</description>
+        </item>
+        <item>
+        <title>DAY #22</title>
+        <link>https://nathanbarta.com/posts/day22/</link>
+        <pubDate>Sat, 24 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day22/</guid>
+        <description>SPM (Part 3 of 3) SPM problems.
+Errors are very hard to decode: You do not get a lot of info from the error logs. Hard to get complete information: There are no good all encompassing guides. Stuff gets outdated very frequently: You will sometimes have to download someone else’s code manually just to change the shebang at the top of their package file “// swift-tools-version:5.3” Super complicated File structure not always obvious It becomes really hard to do more advanced things like link libraries There are a whole lot of linking technicalities that SPM obscures, static vs dynamic, XCworkspace vs xcodeproj, ect… Originally published 04/24/2021 @ https://pittcsc.</description>
+        </item>
+        <item>
+        <title>DAY #21</title>
+        <link>https://nathanbarta.com/posts/day21/</link>
+        <pubDate>Fri, 23 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day21/</guid>
+        <description>SPM (Part 2 of 3) Here is what a package file looks like. You may note that it looks similar to JSON.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 // swift-tools-version:5.3 //&amp;lt;- This comment is necessary, it specifies tool version import PackageDescription let package = Package( name: &amp;#34;MyLibrary&amp;#34;, platforms: [ .macOS(.v10_15), ], products: [ .library(name: &amp;#34;MyLibrary&amp;#34;, targets: [&amp;#34;MyLibrary&amp;#34;]) //Here is where you can define products.</description>
+        </item>
+        <item>
+        <title>DAY #20 🎉🎉</title>
+        <link>https://nathanbarta.com/posts/day20/</link>
+        <pubDate>Thu, 22 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day20/</guid>
+        <description>SPM (Part 1 of 3) Ok, I’ve mentioned SwiftPM or SPM multiple times now - but what is it?
+SwiftPM is a built-in dependency manager for Swift code. SwiftPM allows users to create, distribute, download, and link modules. Modules can either be libraries, or executables.
+Here is the basic file structure of a module:
+1 2 3 4 5 6 ModuleName ├── Sources │ └── ModuleName │ ├── File1.swift │ ├── File2.</description>
+        </item>
+        <item>
+        <title>DAY #19</title>
+        <link>https://nathanbarta.com/posts/day19/</link>
+        <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day19/</guid>
+        <description>Swift has a style guide! It is especially useful if you are an experienced programmer picking up the language, because Swift has certain features that you will likely not know how to style.
+Originally published 04/21/2021 @ https://pittcsc.org/ Discord
+Published here on 09/09/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #18</title>
+        <link>https://nathanbarta.com/posts/day18/</link>
+        <pubDate>Tue, 20 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day18/</guid>
+        <description>Fun fact! Swift was originally codenamed “Shiny,” a reference to a catchphrase used in the TV show Firefly.
+About 3 months before the language launched, it was named Swift.
+Originally published 04/20/2021 @ https://pittcsc.org/ Discord
+Published here on 09/09/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #17</title>
+        <link>https://nathanbarta.com/posts/day17/</link>
+        <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day17/</guid>
+        <description>Structs vs Classes (Part 2 of 2) Structs, as long as they are comprised of less than or equal to 3 words, who’s words are primitive or first-class, are generally performant, as long as they do not implement a protocol. This is because they reside in the stack instead of the heap, have no references (although a struct requires reference counting if its properties require it), and are statically managed. To make data fields first class, you can abstract them with other types, such as an enum which implements String, or Hashable.</description>
+        </item>
+        <item>
+        <title>DAY #16</title>
+        <link>https://nathanbarta.com/posts/day16/</link>
+        <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day16/</guid>
+        <description>Structs vs Classes (Part 1 of 2) Classes Swift classes are reference types. This means if you assign a class to a field, you are passing a reference around. In order to copy a class, you will have to make a shallow or deep copy.
+Structs Swift structs are value types. This means if you are passing a copy around. Every time you move a struct, you create a new copy of the struct.</description>
+        </item>
+        <item>
+        <title>DAY #15</title>
+        <link>https://nathanbarta.com/posts/day15/</link>
+        <pubDate>Sat, 17 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day15/</guid>
+        <description>Computed Properties Computed properties are variables that compute when they are called
+1 2 3 //Example var tempFahrenheit: Int = 90 let tempCelsius: Int { return (32 * tempFahrenheit − 32) × 5/9 } They are useful for disposable resources.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 //Here is an example that i’ve seen in the wild. It just converts ints into other types.</description>
+        </item>
+        <item>
+        <title>DAY #14</title>
+        <link>https://nathanbarta.com/posts/day14/</link>
+        <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day14/</guid>
+        <description>Variatic parameters Swift has variadic parameters. This allows you to put multiple things into a function without having to use an array. It is notated with the range syntax “…”
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 //EXAMPLE FROM https://www.swiftbysundell.com/tips/the-power-of-variadic-parameters/ // When using a variadic parameter, any number of arguments can // be passed, and the compiler will automatically organize them // into an array.</description>
+        </item>
+        <item>
+        <title>DAY #13</title>
+        <link>https://nathanbarta.com/posts/day13/</link>
+        <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day13/</guid>
+        <description>Guard statement A guard statement is basically a reverse if statement
+1 2 3 4 guard textField.text! != “” else { exit(1) } //If the condition is true, the program will continue. Kind of like a safe “assert()” //Guard statements can also be used to unwrap optionals guard let entry = someEntryField.entry else { presentWarning(“You have not entered anything”); return } Why do these even exist? First of all, they make your code prettier.</description>
+        </item>
+        <item>
+        <title>DAY #12</title>
+        <link>https://nathanbarta.com/posts/day12/</link>
+        <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day12/</guid>
+        <description>There are 5+ ways to write a loop in Swift
+1 2 3 4 5 6 7 8 9 10 11 12 13 for i in 1…3 { } //range for i in collection { } //over a collection for i in stride(…) { } //striding while () { } //while repeat { } while () //Same thing, but condition is after body. //Higher order solutions .forEach {} .map {} Originally published 04/14/2021 @ https://pittcsc.</description>
+        </item>
+        <item>
+        <title>DAY #11</title>
+        <link>https://nathanbarta.com/posts/day11/</link>
+        <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day11/</guid>
+        <description>Type aliasing Type aliasing is a way of giving a type a different name. It is useful for type-safe code organization, and cosmetics.
+1 2 3 4 5 typealias Credit = Int struct Course { let credits: Credit } Originally published 04/13/2021 @ https://pittcsc.org/ Discord
+Published here on 09/08/2022. Blog published date reflects the original date of publication.</description>
+        </item>
+        <item>
+        <title>DAY #10 🎉</title>
+        <link>https://nathanbarta.com/posts/day10/</link>
+        <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day10/</guid>
+        <description>Swift extensions are probably one of the most powerful features of the language.
+You can place extra code in extensions and it will be as if the code was in the entity itself.
+In short: &amp;ldquo;Extension methods are a special kind of static method, but they are called as if they were instance methods on the extended type.&amp;rdquo;
+1 2 3 4 5 6 7 class Army { func giveCommand(command: String) -&amp;gt; CommandID {} } extension Army { func rescindCommand(id: CommandID) -&amp;gt; Bool {} //This code is as if it is in class Army } 1 2 3 4 //All arrays with type Army will now have a “deploy” functionality.</description>
+        </item>
+        <item>
+        <title>DAY #9</title>
+        <link>https://nathanbarta.com/posts/day9/</link>
+        <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day9/</guid>
+        <description>The 5 access control keywords. 1 2 3 4 5 6 open class Book { //An “open” class allows subclassing within a context outside of the defining module private var name: String //Restricts access to enclosing declaration. Extensions in same class file will be able to access. public var isbn: UUID //Does not restrict access. fileprivate var genre: String //Restricts access outside of the defining *file*. Classes within the same file will be able to access.</description>
+        </item>
+        <item>
+        <title>DAY #8</title>
+        <link>https://nathanbarta.com/posts/day8/</link>
+        <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day8/</guid>
+        <description>Enums are really powerful! Associated values: You can store custom values in an enum.
+1 2 3 4 5 6 7 8 9 enum Genre { case fiction case scifi case nonFiction case history case science case medical case other(name: String) &amp;lt;——— } Raw values: You can store raw values in an enum. This can be especially useful if you are trying to wrap a reference type like a String (see below) in a value type (enum).</description>
+        </item>
+        <item>
+        <title>DAY #7</title>
+        <link>https://nathanbarta.com/posts/day7/</link>
+        <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day7/</guid>
+        <description>Swift is interoperable with Obj-C and C.
+This is a really cool feature that allows you to make lightning fast code.
+With a little (lot) of finagling, you can run C libraries from Swift, which opens the doors to higher performance and graphical/musical/computational applications.
+The basic structure for importing a C library in Swift might look like this:
+Compiled C library on system in users/lib or wherever it is default -&amp;gt; Make a module -&amp;gt; Import as system library with SwiftPM (SwiftPackageManager) into that module -&amp;gt; Make sure linker is working correctly -&amp;gt; Create modulemap file and Bridging header file (also sometimes called a shim) -&amp;gt; Configure these files -&amp;gt; Import this module into your project using SwiftPM.</description>
+        </item>
+        <item>
+        <title>DAY #6</title>
+        <link>https://nathanbarta.com/posts/day6/</link>
+        <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day6/</guid>
+        <description>What are all these “@“ preceding functions? @IBAction &amp;amp; @IBOutlet: These are remnants of Obj-c, and pre-macOS10.3. Before Xcode existed, there was something called Project Builder. To create views for Project Builder, you had to use a separate application called Interface Builder, which made .nib files &amp;amp; the object graph. @IBOutlet and @IBAction were used as keywords to expose Project Builder code to Interface builder. Note that the “IB” in these keywords stands for Interface Builder.</description>
+        </item>
+        <item>
+        <title>DAY #5</title>
+        <link>https://nathanbarta.com/posts/day5/</link>
+        <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day5/</guid>
+        <description>What is the protocol-delegate communication pattern? The Protocol-delegate pattern is a method of subscribing methods to an event.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 protocol ButtonPressedDelegate: AnyObject { func methodToBeImplemented() } class ReceivingClass: UIViewController, ButtonPressedDelegate { func methodToBeImplemented() { //Conform to protocol print(“Button pressed”) } } class SendingClass: UIViewController { weak var delegate: ButtonPressedDelegate?</description>
+        </item>
+        <item>
+        <title>DAY #4</title>
+        <link>https://nathanbarta.com/posts/day4/</link>
+        <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day4/</guid>
+        <description>Swift Optionals Crash Course Optionals are notated by a &amp;ldquo;?&amp;rdquo; postfix. Some types are optional by default. If a type is optional, it either has a value, or is nil. There are a lot of things that are optionals, such as images and text fields. Optionals allow for more logical API’s
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 var age: Int?</description>
+        </item>
+        <item>
+        <title>DAY #3</title>
+        <link>https://nathanbarta.com/posts/day3/</link>
+        <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day3/</guid>
+        <description>What are Swift’s web development options? Swift is a great choice for web development due to the following features:
+Speed. Swift’s loops are lightning fast. Loops are very important for web-backends Shared models. You can share a single data model file between your web app and mobile app (EX: DefaultUser.swift). This can cut down on development costs and time MASSIVELY. It’s also super clean and…. Expressive. Swift is super expressive. This is always an advantage.</description>
+        </item>
+        <item>
+        <title>DAY #2</title>
+        <link>https://nathanbarta.com/posts/day2/</link>
+        <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day2/</guid>
+        <description>What is needed to publish an iOS app on the app store, and what is the process like? You will need a developer account: To get an individual’s developer account you will need basic information like your name and address. If you are trying to get a business account, you will need a website, ADUNS number, and an individual with binding authority (probably you) to administer the account. An ADUNS number can be obtained by filling out a form on Apple’s website.</description>
+        </item>
+        <item>
+        <title>DAY #1</title>
+        <link>https://nathanbarta.com/posts/day1/</link>
+        <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/day1/</guid>
+        <description>What is the difference between Foundation, Darwin, and CoreFoundation? The Foundation framework is an Obj-C framework part of Swift’s core libraries. It is the root of all NSObject types. Foundation is closed source.
+The Core Foundation (CF) framework is a lower level C implemented library part of Swift’s core libraries. It is the root of all CF types. CF objects must have their memory managed manually. CF does not need a Obj-C runtime.</description>
+        </item>
+        
+    </channel>
+</rss>

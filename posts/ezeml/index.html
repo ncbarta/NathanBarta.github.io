@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='EZEML is a simple, verbose, backwards compatible, markup language to describe a workout.'><title>EZPT Exercise Markup Language (EZEML)</title>
+
+<link rel='canonical' href='https://nathanbarta.com/posts/ezeml/'>
+
+<link rel="stylesheet" href="/scss/style.min.ac77dcf8b111b51da39a92990f431923f210f3876d85798a2125667f96dc33a4.css"><meta property='og:title' content='EZPT Exercise Markup Language (EZEML)'>
+<meta property='og:description' content='EZEML is a simple, verbose, backwards compatible, markup language to describe a workout.'>
+<meta property='og:url' content='https://nathanbarta.com/posts/ezeml/'>
+<meta property='og:site_name' content='Nathan Barta'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='EZPT' /><meta property='article:tag' content='EZEML' /><meta property='article:tag' content='Swift' /><meta property='article:published_time' content='2022-09-20T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-09-20T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="EZPT Exercise Markup Language (EZEML)">
+<meta name="twitter:description" content="EZEML is a simple, verbose, backwards compatible, markup language to describe a workout.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "auto");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Nathan Barta</a></h1>
+            <h2 class="site-description">CS @ Pitt | iOS Developer</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/NathanBarta'
+                        target="_blank"
+                        title="Github"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Posts</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/ezeml/">EZPT Exercise Markup Language (EZEML)</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            EZEML is a simple, verbose, backwards compatible, markup language to describe a workout.
+        </h3>
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 20, 2022</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>This document is from my work at <a class="link" href="https://www.ezpt.xyz/"  target="_blank" rel="noopener"
+    >ezpt.xyz</a>, where I worked as an iOS developer on their physical therapy application. My hope is that this language becomes an industry standard, or at least a stepping-stone for the future of exercise notation.</p>
+<h2 id="why-are-we-creating-ezeml">Why are we creating EZEML?</h2>
+<p>Workouts (aka Routines) on our app are constantly changing. Every time we modify what a workout looks like, we have to change our entire database schema. This is a difficult operation. With EZEML, our client-side app simply has to implement a version of EZEML that is high enough to run the current features. Existing workouts will not have to be migrated. The language will also be able to generate a human-readable description of the workout.</p>
+<h2 id="what-constructs-does-ezeml-v1-implement">What constructs does EZEML v1 implement?</h2>
+<ul>
+<li>Sets &amp; Reps</li>
+<li>Drop/Pyramid/Ladder sets</li>
+<li>Supersets/Circuits</li>
+<li>Asymetric (Unilateral) exercises (Ex: single leg RDL)</li>
+<li>Weight, Time-based, RPE/ORM, Failure sets</li>
+</ul>
+<h2 id="syntax">Syntax</h2>
+<p>This section will introduce EZEML in increasing levels of complexity with examples before giving a technical definition.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">Description</th>
+<th style="text-align:center">EZEML</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">5 sets of 5 squats</td>
+<td style="text-align:center"><code>&quot;squat&quot;:5x5</code></td>
+</tr>
+<tr>
+<td style="text-align:left">3 sets of squats to failure</td>
+<td style="text-align:center"><code>&quot;squat&quot;:3xF</code></td>
+</tr>
+<tr>
+<td style="text-align:left">3 sets of squats with reps of 4, 6, and 8</td>
+<td style="text-align:center"><code>&quot;squat&quot;:3x(4,6,8)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">3 sets of 8 squats with the last set to failure</td>
+<td style="text-align:center"><code>&quot;squat&quot;:3x(8,8,F)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">2 sets of 8 reps bench at 125lbs</td>
+<td style="text-align:center"><code>{&quot;weight&quot;:lbs}&quot;bench&quot;:2x8@125</code></td>
+</tr>
+<tr>
+<td style="text-align:left">3 sets of 8 reps decreasing by 3 bench at 125lbs</td>
+<td style="text-align:center"><code>{&quot;weight&quot;:lbs}&quot;bench&quot;:3x(8,5,2)@125</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Dropset of 4 sets, 4 reps, starting at 225lbs, drop by 15lbs deadlift</td>
+<td style="text-align:center"><code>{&quot;weight&quot;:lbs}&quot;deadlift&quot;:4x(4@225,4@210,4@195,4@180)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Dropset of 4 sets, 4 reps increasing by 3, starting at 90lbs, drop by 15lbs overhead press</td>
+<td style="text-align:center"><code>{&quot;weight&quot;:lbs}&quot;overhead-press&quot;:4x(4@90,7@75,10@60,13@45)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">3 sets of 4 reps single leg RDL&rsquo;s</td>
+<td style="text-align:center"><code>&quot;single-leg-rdl&quot;:3x4:3x4</code></td>
+</tr>
+<tr>
+<td style="text-align:left">3 sets of 4 reps on left leg, 3 sets of 5 reps on right leg, single leg RDL&rsquo;s</td>
+<td style="text-align:center"><code>&quot;single-leg-rdl&quot;:3x4:3x5</code></td>
+</tr>
+<tr>
+<td style="text-align:left">3 sets of 4 reps on right leg, single leg rdl&rsquo;s</td>
+<td style="text-align:center"><code>&quot;single-leg-rdl&quot;::3x5</code></td>
+</tr>
+<tr>
+<td style="text-align:left">3 sets of 5 squats, 3 sets of 5 deadlift</td>
+<td style="text-align:center"><code>&quot;squat&quot;:3x5;&quot;deadlift&quot;:3x5</code></td>
+</tr>
+<tr>
+<td style="text-align:left">4 sets of 10 overhead press, and superset of 3 sets of 5 squats, 3 sets of 5 deadlift.</td>
+<td style="text-align:center"><code>&quot;overhead-press&quot;:4x10;super(&quot;squat&quot;:3x5;&quot;deadlift&quot;:3x5)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">4 sets of 60sec achillies iso hold</td>
+<td style="text-align:center"><code>&quot;achillies-iso&quot;:4x60T</code></td>
+</tr>
+<tr>
+<td style="text-align:left">4 sets of 60, 80, 100, 120 sec, achillies iso hold</td>
+<td style="text-align:center"><code>&quot;achillies-iso&quot;:4x(60T,80T,100T,120T)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">4 sets of 60 sec achillies iso hold with 40lbs</td>
+<td style="text-align:center"><code>{&quot;weight&quot;:lbs}&quot;achillies-iso&quot;:4x(60T)@40</code></td>
+</tr>
+<tr>
+<td style="text-align:left">4 sets of 60 sec decreasing by 10sec achillies iso hold with 40lbs increasing by 10lbs</td>
+<td style="text-align:center"><code>{&quot;weight&quot;:lbs}&quot;achillies-iso&quot;:4x(60T@40,50T@50,40T@60,30T@70)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">4 sets of 60sec single leg achillies iso hold</td>
+<td style="text-align:center"><code>&quot;single-leg-achillies-iso&quot;:4x60T:4x60T</code></td>
+</tr>
+<tr>
+<td style="text-align:left">4 sets of 5 squats at 6 RPE</td>
+<td style="text-align:center"><code>&quot;squat&quot;:4x5%6</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>EZEML v1.0 is made up of two sections, the header and the tokens (body.)</p>
+<h3 id="syntax-the-header">Syntax: The Header</h3>
+<p>The header is used for creating context for the computer. It can be omitted if you are using this notation by hand. Parameters are delimited by commas. You may also pass in key-value pairs not enumerated by this specification to be used in your implementation.</p>
+<p>Parameters:</p>
+<ul>
+<li><em>required</em> <code>version</code>: The version of EZEML it was written in.</li>
+<li><em>required</em> <code>weight</code>: The unit of weight for all the exercises. Supported weights: lbs (Pounds), kg (kilograms), st (stone).</li>
+<li><code>rest-set</code>: The amount of rest between sets (seconds)</li>
+<li><code>rest-exercise</code>: The amount of rest between exercises (seconds). Behaviour of this parameter when it comes to supersets is left to the implementation.</li>
+<li><code>name</code>: The name for the workout. Workouts do not have to be named.</li>
+</ul>
+<p>Example:</p>
+<p><code>{&quot;version&quot;:&quot;1.0&quot;,&quot;weight&quot;:&quot;lbs&quot;,&quot;rest-set&quot;:30,&quot;rest-exercise&quot;:60,&quot;name&quot;:&quot;Strength program 2&quot;}</code></p>
+<h3 id="syntax-the-body">Syntax: The Body</h3>
+<p>A token is an exercise within a workout. They are separated by &ldquo;;&rdquo;. There are two types of tokens: Single, and Super. There is also a Circuit token, which is an alias of Super. Single is a single exercise. Super is a collection (superset) of tokens (other exercises) - however these tokens have the restriction of no supersets, since EZEML v1.0 prohibits nested supersets. A Single token has two parts, name and work - separated by &ldquo;:&rdquo;. The name is the name of an exercise. The work is what you&rsquo;ll be doing for that exercise. Names follow naming conventions in Rules (<em>next section</em>.) Work can further be separated by another &ldquo;:&rdquo; in certain cases (asymetric exercises). A Super token surrounds a collection of Single tokens with function-like syntax <code>super(...)</code>. A Circuit is the same as a Super, it is a generalized grouping of exercises, while a superset is usually designed with a &ldquo;push pull&rdquo; aspect.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:center">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Single</td>
+<td style="text-align:left">A single exercise with a name and work.</td>
+<td style="text-align:center"><code>&quot;NAME&quot;:WORK</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Super</td>
+<td style="text-align:left">A collection of other tokens</td>
+<td style="text-align:center"><code>super(SINGLE;...)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Circuit</td>
+<td style="text-align:left">A collection of other tokens</td>
+<td style="text-align:center"><code>circuit(SINGLE;...)</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>There are 4 kinds of work: None, Standard, Standard Varied, Asymetric.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">Kind</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:center">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">None</td>
+<td style="text-align:left">No work.</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">Standard</td>
+<td style="text-align:left">SETS and REPS delimited by &ldquo;x&rdquo;.</td>
+<td style="text-align:center"><code>SETSxREPS</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Standard Varied</td>
+<td style="text-align:left">SETS and (variable) REPS delimited by &ldquo;x&rdquo;.</td>
+<td style="text-align:center"><code>SETSx(REPS,...)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Asymetric</td>
+<td style="text-align:left">A standard or standard varied or none kind on each side of &ldquo;:&rdquo; delimiter.</td>
+<td style="text-align:center"><code>STANDARD:STANDARD</code> or <code>STANDARD:STANDARD_VARIED</code> or <code>STANDARD:NONE</code> or <code>STANDARD_VARIED:STANDARD</code> or <code>STANDARD_VARIED:STANDARD_VARIED</code> or <code>STANDARD_VARIED:NONE</code> or <code>NONE:STANDARD</code> or <code>NONE:STANDARD_VARIED</code> or <code>NONE:NONE</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Reps can have modifiers attached to them. Modifiers follow a precidence, and should be applied top to bottom in the following chart. RPE cannot be combined with weight, but it can be combined with time.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">Modifier</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:center">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Time</td>
+<td style="text-align:left">Makes reps be time-based instead of repitition based.</td>
+<td style="text-align:center"><code>REPST</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Weight</td>
+<td style="text-align:left">Designates how much weight you should be lifting for a given rep.</td>
+<td style="text-align:center"><code>STANDARD@Weight</code> or <code>STANDARD_VARIED@Weight</code> or inside <code>STANDARD_VARIED</code> like <code>SETSx(REPS@Weight,...)</code> aka <code>REPS@Weight</code></td>
+</tr>
+<tr>
+<td style="text-align:left">RPE</td>
+<td style="text-align:left">Designates the intensity of the rep.</td>
+<td style="text-align:center"><code>STANDARD%RPE</code> or <code>STANDARD_VARIED%RPE</code> or inside <code>STANDARD_VARIED</code> like <code>SETSx(REPS%RPE,...)</code> aka <code>REPS%RPE</code></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="rules-not-exhaustive">Rules (Not exhaustive)</h2>
+<ul>
+<li>Acceptable characters for naming (workouts and exercises): a-z, A-Z, &quot; &ldquo;, &ldquo;-&rdquo;, 0-9, &ldquo;&rsquo;&rdquo;, &ldquo;,&rdquo;, &ldquo;:&rdquo;, &ldquo;%&rdquo;, &ldquo;°&rdquo;, &ldquo;+&rdquo;, &ldquo;/&rdquo;, &ldquo;&amp;&rdquo;, &ldquo;@&rdquo;, &ldquo;&lt;&rdquo;, &ldquo;&gt;&rdquo;, &ldquo;#&rdquo;, &ldquo;(&rdquo;, &ldquo;)&rdquo;.</li>
+<li>You cannot currently put a superset inside of a superset</li>
+<li>If you modify weight for one set, you must explicitly set it for the other sets too</li>
+<li>If a symetrical exercise has an asymetrical/unilateral variation (RDL&rsquo;s, single leg RDL&rsquo;s), you should not use asymetrical notation on the symetric version. All named exercises have a concrete description. While a single arm bench might exist, you should name it &ldquo;single-arm-bench&rdquo; (or something else) instead of &ldquo;bench&rdquo;.</li>
+<li>Time must be notated in seconds. (Ex: 1 minute and 20 seconds -&gt; 80sec)</li>
+<li>Time sets may not be combined with rep sets. This goes back to &ldquo;all named exercises have a concrete description&rdquo; point. You may however superset a rep set and a time set for a similar effect.</li>
+<li>The max number for reps, sets, weight, and time, is currently 65535.</li>
+<li>Fractional weight is accepted up to 2 decimal places.</li>
+<li>Exercise names have a minimum length of 1 and max of 128 characters (Ex: <em>nathans-super-epic-amazing-special-exercise-with-some-awesomely-cool-modifications-and-a-super-long-name-that-has-128-characters</em>.)</li>
+<li>Supersets must have 2 or more exercises</li>
+<li>STANDARD_VARIED SETS and number of REPS terms must match (Ex: 3x(4,4,4) <em>right</em>, 3x(4,4) <em>wrong</em>.)</li>
+</ul>
+<h2 id="parsing">Parsing</h2>
+<p>EZEML is simple enough that you don&rsquo;t need node trees or other data structures. However, the implementation is your choice. You can parse all tokens at once, or parse &ldquo;by the wire,&rdquo; one token at a time (iterating over the lexems) - however depending on the source of your EZEML files you may need to call a validation function to ensure the syntax is correct.</p>
+<h2 id="files--compression">Files &amp; Compression</h2>
+<p>A file should contain a single workout. The file extension is <em>.ezml</em>. EZEML is meant to be human readable, however you are free to add a layer of abstraction and add lossless compression if you wish. We suggest you use the file extension <em>.ezmlc</em> for compressed EZEML.</p>
+<h2 id="faq">FAQ</h2>
+<ul>
+<li><strong>How do I notate ROM?</strong>
+EZEML does not currently support ROM. Create separate exercises for different ROM. (Ex: &ldquo;squat-parallel&rdquo;, &ldquo;squat-atg&rdquo;)</li>
+<li><strong>How do I notate tempo?</strong>
+EZEML does not currently support tempo. Create separate exercises for different tempo. (Ex: &ldquo;bench-4-2-1&rdquo;). You could also make a timeset with weight - which works well for eccentric exercises.</li>
+<li><strong>How do I notate negatives?</strong>
+Negatives are considered separate exercises than their &ldquo;positives&rdquo; counterparts, so just name them differently (Ex: &ldquo;neg-bench&rdquo;)</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ezpt/">EZPT</a>
+        
+            <a href="/tags/ezeml/">EZEML</a>
+        
+            <a href="/tags/swift/">Swift</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+        <div class="article-list--compact links">
+    
+        <article>
+            <a href="https://www.ezpt.xyz/" target="_blank" rel="noopener">
+                <div class="article-details">
+                    <h2 class="article-title">EZPT</h2>
+                    <footer class="article-time">
+                        
+                            Join our team of industry leading physicians, physical therapists, and personal trainers and get started on YOUR personalized exercise program.
+                        
+                    </footer>
+                </div>
+        
+                
+                    <div class="article-image">
+                        <img src="https://uploads-ssl.webflow.com/61660a5819824a2c9e97769d/61a2bd5b0bba1f34fac2f79d_favicon.png" loading="lazy">
+                    </div>
+                
+            </a>
+        </article>
+    
+</div>
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 Nathan Barta
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.13.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#why-are-we-creating-ezeml">Why are we creating EZEML?</a></li>
+    <li><a href="#what-constructs-does-ezeml-v1-implement">What constructs does EZEML v1 implement?</a></li>
+    <li><a href="#syntax">Syntax</a>
+      <ol>
+        <li><a href="#syntax-the-header">Syntax: The Header</a></li>
+        <li><a href="#syntax-the-body">Syntax: The Body</a></li>
+      </ol>
+    </li>
+    <li><a href="#rules-not-exhaustive">Rules (Not exhaustive)</a></li>
+    <li><a href="#parsing">Parsing</a></li>
+    <li><a href="#files--compression">Files &amp; Compression</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
