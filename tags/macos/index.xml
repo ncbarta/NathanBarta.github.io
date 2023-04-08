@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>MacOS on Nathan Barta</title>
+        <link>https://nathanbarta.com/tags/macos/</link>
+        <description>Recent content in MacOS on Nathan Barta</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nathanbarta.com/tags/macos/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Notes on AVVideo Compression</title>
+        <link>https://nathanbarta.com/posts/avvideo-compression/</link>
+        <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/avvideo-compression/</guid>
+        <description>this post is a work in progress (~50% done) &amp;amp; may not be completely factual
+Notes on AVVideo Compression Recently I was tasked with fixing and adding new features to a video pipeline. Our app was supposed to record the user and save a compressed file to remote storage, however, our video files were getting corrupted. This post has some helpful information about Apple&amp;rsquo;s video encoding APIs. Not all information is 100% tested or factual - there is some speculation &amp;amp; I am not super knowledgable about this topic.</description>
+        </item>
+        <item>
+        <title>My Favorite Swift/iOS/MacOS Resources</title>
+        <link>https://nathanbarta.com/posts/my-favorites/</link>
+        <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/my-favorites/</guid>
+        <description>RESOURCES Originally written for the #swift-dev branch of PittCSC
+iOS/MacOS Application Development &amp;amp; Swift Name Topics Post Frequency Reading-level Swift by Sundell Articles, Tutorials, Swift Frequent Beginner-Advanced UseYourLoaf Debugging, testing, assorted Weekly Intermediate-Advanced HackingWithSwift Tutorials, career Occasional Beginner TheSwiftDev Tutorials, Vapor, SPM, design patterns, assorted Every other week Intermediate - Advanced SwiftRocks Deployment, security, internals Monthly… sometimes Advanced RDerik Security, environment Monthly… sometimes Advanced Donny Wals Data, JSON, Combine Every other week Intermediate - Advanced Dave DeLong HTTP with Swift, compiler Monthly… sometimes Beginner - Advanced TheAtomicBirdhouse Assorted, CloudKit Monthly… sometimes Intermediate - Advanced iOSGoodies Newsletter, shoutouts Weekly Beginner - Advanced AndyIbanez Assorted Weekly Beginner - Advanced DanielSaidi SPM Monthly… sometimes Beginner - Advanced RayWenderlich Tutorials Weekly Beginner - Advanced Swiftjectivec Tutorials Frequent Beginner-Advanced Erica Sadun Assorted Occasional Intermediate-Advanced Igor Kulman Tutorials Monthly Intermediate-Advanced SarunW Tutorials Almost daily Beginner-Advanced Belkadan Software Articles, Low-Level, Swift Monthly Beginner-Advanced iOS/MacOS Security Name Topics Post Frequency Reading-level Objective-See Malware, Privacy, Security Frequent Intermediate-Advanced Sneak Privacy, Philosophy Occasional Beginner-Advanced Security Affairs - Mobile News Very Frequent Beginner-Advanced TheEvilBit Malware, Vulnerabilities Monthly Intermediate-Advanced The Desolation of Blog Guides, Opinions/Commentary, Privacy Frequent Beginner-Advanced Wojciech Reguła Securty, #macOSRedTeamingTricks, Vulnerabilities Frequent Beginner-Advanced Der Flounder Securty Seldom updated Intermediate-Advanced Open source directory: https://iosdevdirectory.</description>
+        </item>
+        
+    </channel>
+</rss>

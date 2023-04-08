@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Video on Nathan Barta</title>
+        <link>https://nathanbarta.com/tags/video/</link>
+        <description>Recent content in Video on Nathan Barta</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nathanbarta.com/tags/video/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Notes on AVVideo Compression</title>
+        <link>https://nathanbarta.com/posts/avvideo-compression/</link>
+        <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/avvideo-compression/</guid>
+        <description>this post is a work in progress (~50% done) &amp;amp; may not be completely factual
+Notes on AVVideo Compression Recently I was tasked with fixing and adding new features to a video pipeline. Our app was supposed to record the user and save a compressed file to remote storage, however, our video files were getting corrupted. This post has some helpful information about Apple&amp;rsquo;s video encoding APIs. Not all information is 100% tested or factual - there is some speculation &amp;amp; I am not super knowledgable about this topic.</description>
+        </item>
+        
+    </channel>
+</rss>

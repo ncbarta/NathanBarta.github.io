@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>MapKit on Nathan Barta</title>
+        <link>https://nathanbarta.com/tags/mapkit/</link>
+        <description>Recent content in MapKit on Nathan Barta</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 20 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://nathanbarta.com/tags/mapkit/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Maxing out MapKit: Optimizing map views for high perfomance</title>
+        <link>https://nathanbarta.com/posts/maxing-out-mapkit/</link>
+        <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/posts/maxing-out-mapkit/</guid>
+        <description>All changes require minimal code changes and boost perfomance substantially. This is not a tutorial on how to use a map view.
+Dequeue If you are looking at this blog, there is a high chance you already know the following optimization.
+Map Views are set up very similary to Table Views from an interface perspective. Developers should make sure they dequeue MKMapAnnotations.
+1 2 3 4 5 6 7 8 func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -&amp;gt; MKAnnotationView?</description>
+        </item>
+        
+    </channel>
+</rss>

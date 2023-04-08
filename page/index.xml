@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Pages on Nathan Barta</title>
+        <link>https://nathanbarta.com/page/</link>
+        <description>Recent content in Pages on Nathan Barta</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Fri, 02 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://nathanbarta.com/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>About</title>
+        <link>https://nathanbarta.com/about/</link>
+        <pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/about/</guid>
+        <description>Hello, my name is Nathan, I am known to many simply as &amp;ldquo;Barta&amp;rdquo;
+I am a CS student at the University of Pittsburgh (2020-2025)
+I am the founder &amp;amp; leader of the Swift Development Branch in PittCSC
+My interests include:
+iOS/macOS development Devops / System Design Backend Programming Security (macOS, iOS, and Linux) I have been programming on the iOS platform for 5+ years. I have worked at Leidos Inc, and EZPT as an iOS application developer.</description>
+        </item>
+        <item>
+        <title>Posts</title>
+        <link>https://nathanbarta.com/archives/</link>
+        <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Search</title>
+        <link>https://nathanbarta.com/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://nathanbarta.com/search/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

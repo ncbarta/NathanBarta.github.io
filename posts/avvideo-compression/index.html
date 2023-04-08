@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='this post is a work in progress (~50% done) &amp;amp; may not be completely factual
+Notes on AVVideo Compression Recently I was tasked with fixing and adding new features to a video pipeline. Our app was supposed to record the user and save a compressed file to remote storage, however, our video files were getting corrupted. This post has some helpful information about Apple&amp;rsquo;s video encoding APIs. Not all information is 100% tested or factual - there is some speculation &amp;amp; I am not super knowledgable about this topic.'><title>Notes on AVVideo Compression</title>
+
+<link rel='canonical' href='https://nathanbarta.com/posts/avvideo-compression/'>
+
+<link rel="stylesheet" href="/scss/style.min.ac77dcf8b111b51da39a92990f431923f210f3876d85798a2125667f96dc33a4.css"><meta property='og:title' content='Notes on AVVideo Compression'>
+<meta property='og:description' content='this post is a work in progress (~50% done) &amp;amp; may not be completely factual
+Notes on AVVideo Compression Recently I was tasked with fixing and adding new features to a video pipeline. Our app was supposed to record the user and save a compressed file to remote storage, however, our video files were getting corrupted. This post has some helpful information about Apple&amp;rsquo;s video encoding APIs. Not all information is 100% tested or factual - there is some speculation &amp;amp; I am not super knowledgable about this topic.'>
+<meta property='og:url' content='https://nathanbarta.com/posts/avvideo-compression/'>
+<meta property='og:site_name' content='Nathan Barta'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Swift' /><meta property='article:tag' content='MacOS' /><meta property='article:tag' content='iOS' /><meta property='article:tag' content='Video' /><meta property='article:tag' content='Compression' /><meta property='article:tag' content='Documentation' /><meta property='article:published_time' content='2023-01-09T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-01-09T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Notes on AVVideo Compression">
+<meta name="twitter:description" content="this post is a work in progress (~50% done) &amp;amp; may not be completely factual
+Notes on AVVideo Compression Recently I was tasked with fixing and adding new features to a video pipeline. Our app was supposed to record the user and save a compressed file to remote storage, however, our video files were getting corrupted. This post has some helpful information about Apple&amp;rsquo;s video encoding APIs. Not all information is 100% tested or factual - there is some speculation &amp;amp; I am not super knowledgable about this topic.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "auto");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Nathan Barta</a></h1>
+            <h2 class="site-description">CS @ Pitt | iOS Developer</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/NathanBarta'
+                        target="_blank"
+                        title="Github"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Posts</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/avvideo-compression/">Notes on AVVideo Compression</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jan 09, 2023</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><em>this post is a work in progress (~50% done) &amp; may not be completely factual</em></p>
+<h1 id="notes-on-avvideo-compression">Notes on AVVideo Compression</h1>
+<p>Recently I was tasked with fixing and adding new features to a video pipeline. Our app was supposed to record the user and save a compressed file to remote storage, however, our video files were getting corrupted. This post has some helpful information about Apple&rsquo;s video encoding APIs. Not all information is 100% tested or factual - there is some speculation &amp; I am not super knowledgable about this topic.</p>
+<h2 id="compression-considerations">Compression considerations</h2>
+<p>Modern compression algorithms take into account spacial (intra-) and temporal (inter-) compression. Spacial compression is similar to text compression, it tries to compress pixels within a frame into the smallest form factor. Temporal compression stores the difference between frames, which means areas of video that don&rsquo;t change much get stored much more compactly.</p>
+<p>Two of the most common codecs are H264 and H265 (HEVC). They can both technically encode lossless, but the majority of users, including me, choose lossy settings. HEVC can store the same quality video in about 50% of the space as H264, however there are compatibility issues in browsers, so you should evaluate who&rsquo;s going to be watching your videos, and what capabilities exist. I chose to offer configurations for both codecs. Our videos are stored in mp4 containers with no audio.</p>
+<h2 id="compression-terms">Compression terms</h2>
+<h3 id="bit-rate">Bit Rate</h3>
+<p>Bit rate is the number of bits required to represent one second of video. In our case, one of our configurations was for HD (1080x720) @ 60fps, with a pixel format of 32_BGRA. This means, uncompressed, our video takes about 1080x720x32x60 = 1,492,992,000 (1492.992 mbit/s, ~1.5 Gbit/s). Since the average upload speed is currently ~23 Mbps (<a class="link" href="https://www.speedtest.net/global-index/united-states#fixed%29"  target="_blank" rel="noopener"
+    >https://www.speedtest.net/global-index/united-states#fixed)</a>, it would take ~65sec to send 1 second of video &amp; a single 26 second video would cost almost 5GB of storage.</p>
+<p>For this reason, we select a bit rate far lower than what&rsquo;s needed for uncompressed video.</p>
+<p>Bit Rate = # of pixels * FPS * BPP</p>
+<h3 id="bits-per-pixel-bpp">Bits per pixel (BPP)</h3>
+<p>The number of bits to encode a pixel. 3 is considered &ldquo;visually lossless&rdquo;, which is a far cry from the 32 we were using in the above example. Selecting a number between 0.05 and 0.1 will have very noticeable differences. Numbers between 0.1 and 3 will usually have diminishing returns.</p>
+<p>Multiplying the bit rate by 0.131072 can give you a loose estimate for the MAX number of MB/s your video will consume.</p>
+<h3 id="keyframes-i-frames">Keyframes (I-Frames)</h3>
+<p>There are multiple types of frames in a video. Keyframes are just a picture. If you were to have all keyframes, the video would only use spacial compression.</p>
+<h3 id="p-frames-and-b-frames">P-Frames and B-Frames</h3>
+<p>These frames are what makes temporal compression work. They represent the differences between frames &amp; are placed between two keyframes.</p>
+<h3 id="group-of-pictures-gop">Group of Pictures (GOP)</h3>
+<p>Distance between two keyframes. I-Frames sandwich a group of P-Frames and B-Frames.</p>
+<h2 id="avvideocompressionpropertieskey">AVVideoCompressionPropertiesKey</h2>
+<p>This section has descriptions of what the basic AVVideoCompressionPropertiesKey&rsquo;s do, as well as some VideoToolbox keys.</p>
+<p>In my understanding, these settings are often seen as a &ldquo;suggestion&rdquo; to the encoder &amp; may not always be followed as expected.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Desc</th>
+<th style="text-align:left">Considerations</th>
+<th style="text-align:left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">AVVideoAverageBitRateKey</td>
+<td style="text-align:left">The average bit rate that the encoder will shoot for</td>
+<td style="text-align:left">If this value is set too low &amp; the encoder has no other options to degrade video quality to fit the bitrate target, the encoder will <em>fail</em> and spit out a corrupt file. Give the encoder options, such as droppable frames, wider max GOP, wider QP (image quality) range. If the encoder is not struggling to fit into the bit rate, it will take up it&rsquo;s space &amp; return the highest quality video it can.</td>
+<td style="text-align:left">Documentation falsely states that this property only applies to H264</td>
+</tr>
+<tr>
+<td style="text-align:left">AVVideoExpectedSourceFrameRateKey</td>
+<td style="text-align:left">The frame rate of the input device connected to the AVCaptureSession</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">AVCaptureSession has basic presets available statically within code, however, there are additional device presets available during runtime (AVCaptureDevice.Format.)</td>
+</tr>
+<tr>
+<td style="text-align:left">AVVideoMaxKeyFrameIntervalKey</td>
+<td style="text-align:left">Keyframe interval, aka GOP. 1 = 1th = every frame is a keyframe, 2 = 2nd = every other frame is a keyframe, 3 = 3rd = every third frame is a keyframe, etc&hellip;</td>
+<td style="text-align:left">Having all keyframes restricts the encoder to spacial compression only. This is MAX key frame interval. If you have extra space in the bitrate, the encoder will pick a smaller GOP (if a large GOP is a limiting factor to your video quality.) Setting the GOP too small can lead to blurry video because if the encoder is in a crunch, it will degrade QP.</td>
+<td style="text-align:left">Most encoders use a GOP length of 1-2 seconds, aka 30-60 frames @ 30fps, or 60-120 fps @60fps. <a class="link" href="https://openradar.appspot.com/FB7528508"  target="_blank" rel="noopener"
+    >Default settings may differ in H264 &amp; HEVC</a>. Documentation falsely states that this property only applies to H264</td>
+</tr>
+<tr>
+<td style="text-align:left">AVVideoMaxKeyFrameIntervalDurationKey</td>
+<td style="text-align:left">GOP, except time based instead of interval based.</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">AVVideoAllowFrameReorderingKey</td>
+<td style="text-align:left">Allows the encoder to reorder frames to improve compression</td>
+<td style="text-align:left">Computationally expensive, especially when AVAssetWriterInput expects data in realtime</td>
+<td style="text-align:left">Default is true, which means the <em>encoder</em> decides whether to reorder or not.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="tips">Tips</h2>
+<p>Use FFPMG to test videos coming out of your video pipeline. You can check FPS, Resolution, Frames GOP etc.</p>
+<p>32BGRA is compatible with OpenGL.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/swift/">Swift</a>
+        
+            <a href="/tags/macos/">MacOS</a>
+        
+            <a href="/tags/ios/">iOS</a>
+        
+            <a href="/tags/video/">Video</a>
+        
+            <a href="/tags/compression/">Compression</a>
+        
+            <a href="/tags/documentation/">Documentation</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/posts/my-favorites/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">My Favorite Swift/iOS/MacOS Resources</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2023 Nathan Barta
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.13.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#compression-considerations">Compression considerations</a></li>
+    <li><a href="#compression-terms">Compression terms</a>
+      <ol>
+        <li><a href="#bit-rate">Bit Rate</a></li>
+        <li><a href="#bits-per-pixel-bpp">Bits per pixel (BPP)</a></li>
+        <li><a href="#keyframes-i-frames">Keyframes (I-Frames)</a></li>
+        <li><a href="#p-frames-and-b-frames">P-Frames and B-Frames</a></li>
+        <li><a href="#group-of-pictures-gop">Group of Pictures (GOP)</a></li>
+      </ol>
+    </li>
+    <li><a href="#avvideocompressionpropertieskey">AVVideoCompressionPropertiesKey</a></li>
+    <li><a href="#tips">Tips</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

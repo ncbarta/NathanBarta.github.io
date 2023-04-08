@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='What is DerivedData? Derived data is stored at /Users/YourNameHere/Library/Developer/Xcode/DerivedData
+At a basic level, it will cache build information for your projects, but let&amp;rsquo;s see what it actually stores.
+Precompiled module files. These files are an abstraction to reading in headers every time you import something in code. These files will be under a folder with a hash as a name. The hash takes in clang arguments as input. Index folder: You may have seen an indicator saying Indexing in progress.'><title>DAY #24</title>
+
+<link rel='canonical' href='https://nathanbarta.com/posts/day24/'>
+
+<link rel="stylesheet" href="/scss/style.min.ac77dcf8b111b51da39a92990f431923f210f3876d85798a2125667f96dc33a4.css"><meta property='og:title' content='DAY #24'>
+<meta property='og:description' content='What is DerivedData? Derived data is stored at /Users/YourNameHere/Library/Developer/Xcode/DerivedData
+At a basic level, it will cache build information for your projects, but let&amp;rsquo;s see what it actually stores.
+Precompiled module files. These files are an abstraction to reading in headers every time you import something in code. These files will be under a folder with a hash as a name. The hash takes in clang arguments as input. Index folder: You may have seen an indicator saying Indexing in progress.'>
+<meta property='og:url' content='https://nathanbarta.com/posts/day24/'>
+<meta property='og:site_name' content='Nathan Barta'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-09-09T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-09-09T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="DAY #24">
+<meta name="twitter:description" content="What is DerivedData? Derived data is stored at /Users/YourNameHere/Library/Developer/Xcode/DerivedData
+At a basic level, it will cache build information for your projects, but let&amp;rsquo;s see what it actually stores.
+Precompiled module files. These files are an abstraction to reading in headers every time you import something in code. These files will be under a folder with a hash as a name. The hash takes in clang arguments as input. Index folder: You may have seen an indicator saying Indexing in progress.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "auto");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Nathan Barta</a></h1>
+            <h2 class="site-description">CS @ Pitt | iOS Developer</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/NathanBarta'
+                        target="_blank"
+                        title="Github"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Posts</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/swiftdaily/" style="background-color: #fcba03; color: #ffffff;">
+                Swift Daily
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/day24/">DAY #24</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 09, 2021</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="what-is-deriveddata">What is DerivedData?</h1>
+<p>Derived data is stored at <code>/Users/YourNameHere/Library/Developer/Xcode/DerivedData</code></p>
+<p>At a basic level, it will cache build information for your projects, but let&rsquo;s see what it actually stores.</p>
+<ul>
+<li>Precompiled module files. These files are an abstraction to reading in headers every time you
+import something in code. These files will be under a folder with a hash as a name. The hash takes in clang arguments as input.</li>
+<li>Index folder: You may have seen an indicator saying <code>Indexing in progress...</code> in Xcode. Basically, indexing is creating a quick way to search though your project. Xcode manages searching and find/replace stuff very nicely.</li>
+<li>Logs: Just a history of builds/testbuilds etc&hellip;</li>
+<li>Builds: The actual builds are saved. If you don&rsquo;t change your code between runs, Xcode will just use the last stored build.</li>
+<li>Intermediates: Other files that need to be build for the project. These normally include libraries and frameworks. The great part about this section is that many of the files here don&rsquo;t get modified too much, so the cache is very pure (is that a legit term to describe caches? Idk).</li>
+</ul>
+<p>If you&rsquo;ve ever had weird problems with xcode, you&rsquo;re probably familiar with the delete derived data trick. I don&rsquo;t know why problems arise here, or why deleting derived data works, but I hypothesize that it has something to do with cache invalidation bc that kind of stuff gets extremely hard at the low level.</p>
+<p>Here&rsquo;s a quick tip for all the avid Xcode users out there: Navigate to DerivedData and create an alias. Put that alias in your desktop folder. Tada! You now have a less annoying way of accessing DerivedData when you need to.</p>
+<p><em>Information for this post was sourced from the article linked below</em></p>
+<p><em>Originally published 09/09/2021 @ <a class="link" href="https://pittcsc.org/"  target="_blank" rel="noopener"
+    >https://pittcsc.org/</a> Discord</em></p>
+<p><em>Published here on 09/09/2022. Blog published date reflects the original date of publication.</em></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+        <div class="article-list--compact links">
+    
+        <article>
+            <a href="https://branches.pittcsc.org/swift-dev/" target="_blank" rel="noopener">
+                <div class="article-details">
+                    <h2 class="article-title">PittCSC Swift Dev Branch</h2>
+                    <footer class="article-time">
+                        
+                            PittCSC Swift Development branch is the go-to group for all aspects of Swift development.
+                        
+                    </footer>
+                </div>
+        
+                
+                    <div class="article-image">
+                        <img src="https://pittcsc.org/favicon.svg?v=9a67008b66e891272daa13e67e60e7e9" loading="lazy">
+                    </div>
+                
+            </a>
+        </article>
+    
+        <article>
+            <a href="https://vojtastavik.com/2018/09/02/what-is-inside-derived-data-xcode/" target="_blank" rel="noopener">
+                <div class="article-details">
+                    <h2 class="article-title">What&#39;s inside the Derived Data folder?</h2>
+                    <footer class="article-time">
+                        
+                            Deleting derived data - a well know trick that comes in handy every time Xcode behaves strangely for no obvious reason. I still clearly remember when my senior told me about this basic iOS dev trick for the first time.
+                        
+                    </footer>
+                </div>
+        
+                
+                    <div class="article-image">
+                        <img src="https://vojtastavik.com/favicon.ico" loading="lazy">
+                    </div>
+                
+            </a>
+        </article>
+    
+</div>
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/posts/day72/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DAY #72</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/posts/day73/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DAY #73</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/posts/day71/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DAY #71</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/posts/day70/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DAY #70</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/posts/day69/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DAY #69</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2023 Nathan Barta
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.13.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
